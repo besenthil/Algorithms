@@ -1,5 +1,5 @@
-# o(n) - time
-# o(1) - space
+# o(n) - time complexity
+# o(1) - space complexity
 def kadanesAlgorithm(array):
     max_so_far = array[0]
     max_here = array[0]
