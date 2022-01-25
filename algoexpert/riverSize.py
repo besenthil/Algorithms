@@ -1,3 +1,4 @@
+#O(vh) - time, v = vertices, h = height
 def riverSizes(matrix):
     adjacency_graph = [[0 for x in y] for y in matrix]
     output = []
