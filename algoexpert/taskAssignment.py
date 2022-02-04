@@ -2,7 +2,7 @@
 # O(n) - space
 
 def taskAssignment(k, tasks):
-    get_task_duration_indices(tasks)
+    index = get_task_duration_indices(tasks)
     tasks.sort()
     durations = []
     for n in range(k):
