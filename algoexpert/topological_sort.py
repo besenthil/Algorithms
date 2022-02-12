@@ -1,3 +1,6 @@
+from typing import List
+
+
 def topologicalSort(jobs, deps):
     if jobs is not None:
         visited = []
@@ -44,7 +47,7 @@ def get_node_with_zero_in_degrees(adj_graph: list, jobs: list, visited: list):
 
 
 # O(v+e) - number of vertices + no of edges
-def DFS_traversal(node, adj_graph, visited, top_sort_stack, jobs):
+def DFS_traversal(node: int, adj_graph: List[List], visited: List[int], top_sort_stack: List[int], jobs: List[int]):
     if node in visited:
         return True
     if sum(adj_graph[node]) == 0:
@@ -60,7 +63,7 @@ def DFS_traversal(node, adj_graph, visited, top_sort_stack, jobs):
         top_sort_stack.append(node)
 
 
-def create_edges_data_structure_for_cycle_validation(adj_graph):
+def create_edges_data_structure_for_cycle_validation(adj_graph: List[List]):
     edges = []
     for index, node in enumerate(adj_graph):
         j_index_list = []
@@ -72,7 +75,7 @@ def create_edges_data_structure_for_cycle_validation(adj_graph):
     return edges
 
 
-def cycleInGraph(edges):
+def cycleInGraph(edges: List[List]):
     black_bucket = [x for x in range(len(edges))]
     in_progress_bucket = []
     full_visited_bucket = []
